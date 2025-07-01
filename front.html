@@ -39,7 +39,7 @@
             list-style: none;
             flex-wrap: nowrap; /* Keep buttons/items in one row */
             align-items: center;
-            flex-shrink: 1; /* Allow these sections to shrink if needed */
+            flex-shrink: 0.5; /* Allow these sections to shrink if needed */
         }
 
         .nav-left button, .nav-right button {
@@ -464,14 +464,14 @@
             .nav-left, .nav-right {
                 width: auto;
                 justify-content: center;
-                gap: 0.2rem; /* Reduced gap */
+                gap: 0.1rem; /* Reduced gap */
                 flex-wrap: nowrap; /* Keep buttons/items within their group in one row */
-                flex-shrink: 1; /* Allow them to shrink */
+                flex-shrink: 0.5; /* Allow them to shrink */
             }
             .nav-left button, .nav-right button {
                 font-size: 0.65rem; /* Even smaller buttons */
                 padding: 0.2rem 0.4rem; /* Reduced padding */
-                flex-shrink: 0;
+                flex-shrink: 0.5;
             }
             .search-container {
                 flex-shrink: 1;
@@ -493,7 +493,7 @@
             }
             .nav-logo-container {
                 min-width: 50px; /* Smallest min-width for logo container */
-                flex-grow: 0; /* Limit growth for logo container */
+                flex-grow: 1; /* Limit growth for logo container */
             }
 
 
@@ -539,26 +539,26 @@
                 /* Inherits calc(33.33% - 1rem) from global, ensuring 3 columns */
                 min-width: unset; /* Allow it to shrink below 200px if necessary */
                 width: calc(33.33% - 1rem); /* Re-assert for clarity, accounting for gap */
-                padding: 0.4rem; /* Reduce padding inside card */
-                font-size: 0.75rem; /* General smaller font for card */
+                padding: 0.1rem; /* Reduce padding inside card */
+                font-size: 0.40rem; /* General smaller font for card */
             }
             .product-card img {
-                height: 100px; /* Make images smaller to fit 3 columns */
+                height: 60px; /* Make images smaller to fit 3 columns */
             }
             .product-card h3 {
-                font-size: 0.8rem; /* Smaller title */
+                font-size: 0.4rem; /* Smaller title */
                 margin: 0.2rem 0;
             }
             .product-card p {
-                font-size: 0.65rem; /* Smaller description */
+                font-size: 0.30rem; /* Smaller description */
                 margin-bottom: 0.1rem;
             }
             .product-card .price, .product-card .rating {
                 font-size: 0.75rem; /* Smaller price and rating */
             }
             .product-card button {
-                padding: 0.3rem 0.5rem;
-                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+                font-size: 0.2rem;
             }
 
             /* Modal Adjustments for Mobile */
@@ -613,7 +613,6 @@
                         <button>🔍</button>
                     </div>
                 </li>
-                <li><button onclick="alert('Sign Up clicked')">Sign Up</button></li>
                 <li><button onclick="alert('Login clicked')">Login</button></li>
                 <li><button onclick="alert('Logout clicked')">Logout</button></li>
             </ul>
