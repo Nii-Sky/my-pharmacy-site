@@ -15,6 +15,12 @@
 
         body {
             background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
         }
 
         /* Navigation Bar */
@@ -40,6 +46,10 @@
             flex-wrap: nowrap; /* Keep buttons/items in one row */
             align-items: center;
             flex-shrink: 0.5; /* Allow these sections to shrink if needed */
+        }
+         .nav-logo-link {
+            display: block;
+            line-height: 0; /* Remove extra space below image */
         }
 
         .nav-left button, .nav-right button {
@@ -271,7 +281,11 @@
             color: white;
             padding: 1rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0.2rem 0;
+            font-size: 0.9rem;
         }
 
         footer a {
@@ -288,25 +302,25 @@
         @media (max-width: 430px) {
             /* Navigation Bar Adjustments */
             .nav-container {
-                padding: 0.5rem;
+                padding: 0.8rem; /* Increased padding */
                 flex-wrap: nowrap;
                 justify-content: space-around;
             }
             .nav-left, .nav-right {
-                gap: 0.2rem;
+                gap: 0.4rem; /* Slightly increased gap */
                 flex-shrink: 0.6;
             }
             .nav-left button, .nav-right button {
-                font-size: 0.7rem;
-                padding: 0.3rem 0.6rem;
-                min-width: 50px; /* Touch-friendly size */
+                font-size: 0.85rem; /* Increased font size */
+                padding: 0.4rem 0.8rem; /* Increased padding */
+                min-width: 65px; /* Ensure touch-friendly */
             }
             .nav-logo {
-                max-height: 30px;
-                margin: 0 0.2rem;
+                max-height: 40px; /* Increased logo size */
+                margin: 0 0.4rem;
             }
             .nav-logo-container {
-                min-width: 40px;
+                min-width: 60px; /* Increased min-width */
                 flex-grow: 0.5;
             }
 
@@ -315,82 +329,81 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
-                padding: 0.5rem 1rem;
+                padding: 0.8rem 1rem; /* Increased padding */
             }
             .header-logo-left, .header-logo-right {
-                max-height: 30px;
-                margin: 0 5px;
+                max-height: 50px; /* Increased logo size */
+                margin: 0 10px; /* Increased margin */
             }
             .header-text-container {
-                margin: 0 5px;
-                min-width: 60px;
+                margin: 0 10px; /* Increased margin */
+                min-width: 100px; /* Increased min-width */
                 flex-grow: 0.8;
             }
             header h1 {
-                font-size: 1rem;
-                white-space: normal;
+                font-size: 1.3rem; /* Increased font size */
+                white-space: normal; /* Allow wrapping if needed */
             }
             .group-text {
-                font-size: 0.6rem;
-                white-space: normal;
+                font-size: 0.8rem; /* Increased font size */
+                white-space: normal; /* Allow wrapping if needed */
             }
 
             /* Hero Section Adjustments */
             .hero {
-                padding: 2rem 1rem;
+                padding: 3rem 1.5rem; /* Increased padding */
             }
             .hero h2 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
+                font-size: 2rem; /* Increased font size */
+                margin-bottom: 0.75rem;
             }
             .hero p {
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
+                font-size: 1.1rem; /* Increased font size */
+                margin-bottom: 1.25rem;
             }
             .hero button {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-                min-width: 100px;
+                padding: 0.6rem 1.2rem; /* Increased padding */
+                font-size: 1rem; /* Increased font size */
+                min-width: 120px;
             }
 
             /* Product Card Adjustments (3 columns maintained) */
             .product-grid {
-                gap: 1rem;
-                padding: 0.5rem;
+                gap: 1.2rem; /* Slightly increased gap */
+                padding: 0.8rem; /* Increased padding */
             }
             .product-card {
-                width: calc(33.33% - 0.67rem); /* 3 columns, adjusted for smaller gap */
-                min-width: 100px; /* Allow smaller cards for smartphones */
-                padding: 0.5rem;
-                font-size: 0.65rem;
+                width: calc(33.33% - 0.8rem); /* 3 columns, adjusted for new gap */
+                min-width: 110px; /* Increased min-width */
+                padding: 0.7rem; /* Increased padding */
             }
             .product-card img {
-                height: 80px;
+                height: 90px; /* Increased height */
             }
             .product-card h3 {
-                font-size: 0.65rem;
-                margin: 0.3rem 0;
+                font-size: 0.8rem; /* Increased font size */
+                margin: 0.4rem 0;
             }
             .product-card p {
-                font-size: 0.6rem;
-                margin-bottom: 0.2rem;
+                font-size: 0.7rem; /* Increased font size */
+                margin-bottom: 0.3rem;
             }
             .product-card .price, .product-card .rating {
-                font-size: 0.65rem;
+                font-size: 0.85rem; /* Increased font size */
             }
             .product-card button {
-                padding: 0.3rem 0.5rem;
-                font-size: 0.65rem;
-                min-width: 60px; /* Touch-friendly */
+                padding: 0.4rem 0.7rem; /* Increased padding */
+                font-size: 0.8rem; /* Increased font size */
+                min-width: 70px; /* Ensure touch-friendly */
             }
 
             /* Footer Adjustments */
             footer {
-                padding: 0.5rem;
-                font-size: 0.7rem;
+                padding: 0.8rem; /* Increased padding */
+                font-size: 0.85rem; /* Increased font size */
             }
             footer a {
-                margin: 0 0.3rem;
+                margin: 0 0.5rem;
             }
         }
 
@@ -398,25 +411,25 @@
         @media (min-width: 431px) and (max-width: 768px) {
             /* Navigation Bar Adjustments */
             .nav-container {
-                padding: 0.5rem;
+                padding: 0.8rem; /* Increased padding */
                 flex-wrap: nowrap;
                 justify-content: space-around;
             }
             .nav-left, .nav-right {
-                gap: 0.3rem;
+                gap: 0.5rem; /* Slightly increased gap */
                 flex-shrink: 0.5;
             }
             .nav-left button, .nav-right button {
-                font-size: 0.8rem;
-                padding: 0.3rem 0.6rem;
-                min-width: 60px;
+                font-size: 0.9rem; /* Increased font size */
+                padding: 0.4rem 0.8rem; /* Increased padding */
+                min-width: 70px;
             }
             .nav-logo {
-                max-height: 40px;
-                margin: 0 0.3rem;
+                max-height: 50px; /* Increased logo size */
+                margin: 0 0.5rem;
             }
             .nav-logo-container {
-                min-width: 50px;
+                min-width: 70px;
                 flex-grow: 1;
             }
 
@@ -425,71 +438,70 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
-                padding: 0.5rem 1rem;
+                padding: 0.8rem 1.5rem; /* Increased padding */
             }
             .header-logo-left, .header-logo-right {
-                max-height: 50px;
-                margin: 0 5px;
+                max-height: 70px; /* Increased logo size */
+                margin: 0 10px;
             }
             .header-text-container {
-                margin: 0 5px;
-                min-width: 80px;
+                margin: 0 10px;
+                min-width: 120px; /* Increased min-width */
                 flex-grow: 1;
             }
             header h1 {
-                font-size: 1.2rem;
+                font-size: 1.5rem; /* Increased font size */
                 white-space: normal;
             }
             .group-text {
-                font-size: 0.7rem;
+                font-size: 0.9rem; /* Increased font size */
                 white-space: normal;
             }
 
             /* Hero Section Adjustments */
             .hero {
-                padding: 2rem 1rem;
+                padding: 3rem 1.5rem; /* Increased padding */
             }
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem; /* Increased font size */
             }
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem; /* Increased font size */
             }
             .hero button {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
+                padding: 0.7rem 1.4rem; /* Increased padding */
+                font-size: 1rem; /* Increased font size */
             }
 
             /* Product Card Adjustments */
             .product-card {
-                width: calc(33.33% - 1rem);
-                min-width: 150px;
-                padding: 0.7rem;
-                font-size: 0.75rem;
+                width: calc(33.33% - 1rem); /* Maintained 3 columns */
+                min-width: 170px; /* Increased min-width */
+                padding: 0.9rem; /* Increased padding */
             }
             .product-card img {
-                height: 120px;
+                height: 140px; /* Increased height */
             }
             .product-card h3 {
-                font-size: 0.8rem;
-                margin: 0.4rem 0;
+                font-size: 1rem; /* Increased font size */
+                margin: 0.5rem 0;
             }
             .product-card p {
-                font-size: 0.7rem;
-                margin-bottom: 0.3rem;
+                font-size: 0.8rem; /* Increased font size */
+                margin-bottom: 0.4rem;
             }
             .product-card .price, .product-card .rating {
-                font-size: 0.8rem;
+                font-size: 1rem; /* Increased font size */
             }
             .product-card button {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.75rem;
-                min-width: 80px;
+                padding: 0.5rem 0.8rem; /* Increased padding */
+                font-size: 0.9rem; /* Increased font size */
+                min-width: 90px;
             }
 
             /* Footer Adjustments */
             footer {
-                font-size: 0.8rem;
+                font-size: 0.9rem; /* Increased font size */
             }
         }
     </style>
@@ -498,14 +510,11 @@
     <nav>
         <div class="nav-container">
             <ul class="nav-left">
-                <!-- Home button links to index.html -->
                 <li><button onclick="window.location.href='index.html'">Home</button></li>
-                <!-- Products button (which acts as your Shop Now) links to front.html -->
                 <li><button onclick="window.location.href='front.html'">Products</button></li>
             </ul>
 
             <div class="nav-logo-container">
-                <!-- Navigation logo also links to index.html -->
                 <a href="index.html" class="nav-logo-link">
                     <img src="imagefolder/loogo.jpg" alt="PharmaRetail Navigation Logo" class="nav-logo">
                 </a>
@@ -533,13 +542,11 @@
     <section class="hero">
         <h2>Welcome to Sky Healthcare</h2>
         <p>Your Trusted Source for Quality Medications</p>
-        <!-- "Shop Now" button in the hero section links to front.html -->
         <button onclick="window.location.href='front.html'">Shop Now</button>
     </section>
 
     <section id="products" class="product-grid">
-        <!-- Products will be displayed here by JavaScript -->
-    </section>
+        </section>
 
     <footer>
         <p>Contact us: info@pharmaretail.com | Phone: +1-800-555-1234</p>
