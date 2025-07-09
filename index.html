@@ -39,7 +39,7 @@
             list-style: none;
             flex-wrap: nowrap; /* Keep buttons/items in one row */
             align-items: center;
-            flex-shrink: 1; /* Allow these sections to shrink if needed */
+            flex-shrink: 0.5; /* Allow these sections to shrink if needed */
         }
 
         .nav-left button, .nav-right button {
@@ -52,6 +52,7 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s, transform 0.2s;
             flex-shrink: 0; /* Prevent buttons from shrinking too much */
+            touch-action: manipulation; /* Improve touch responsiveness */
         }
 
         .nav-left button:hover, .nav-right button:hover {
@@ -59,9 +60,6 @@
             color: #ffffff;
             transform: scale(1.05);
         }
-    
-
-        
 
         .nav-logo-container {
             display: flex;
@@ -158,6 +156,8 @@
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s;
+            touch-action: manipulation; /* Improve touch responsiveness */
+            min-width: 120px; /* Ensure touch-friendly */
         }
 
         .hero button:hover {
@@ -179,8 +179,7 @@
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            /* Calculate width for 3 columns, accounting for gap */
-            width: calc(33.33% - 1rem); /* (3 products * 1.5rem gap) / 3 = 1rem per side approx */
+            width: calc(33.33% - 1rem); /* 3 columns, accounting for gap */
             min-width: 200px; /* Prevent cards from becoming too narrow */
             padding: 1rem;
             display: flex;
@@ -239,6 +238,8 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background-color 0.3s;
+            touch-action: manipulation; /* Improve touch responsiveness */
+            min-width: 100px; /* Ensure touch-friendly */
         }
 
         .product-card button:hover {
@@ -270,78 +271,178 @@
             color: white;
             padding: 1rem;
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 4rem;
         }
 
         footer a {
             color: white;
             text-decoration: none;
-            margin: 0.5rem;
+            margin: 0 0.5rem;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Responsive Design for Smartphones (6.1-6.9 inches, ~360px-430px) */
+        @media (max-width: 430px) {
             /* Navigation Bar Adjustments */
             .nav-container {
                 padding: 0.5rem;
-                flex-wrap: wrap; /* Allow wrapping only if absolute necessary due to content size */
-                justify-content: center; /* Center items if they wrap */
+                flex-wrap: nowrap;
+                justify-content: space-around;
             }
             .nav-left, .nav-right {
-                width: auto; /* Allow content to dictate width */
-                justify-content: center;
-                gap: 0.2rem; /* Reduce gap even more */
-                flex-wrap: wrap; /* Allow buttons to wrap within their group if needed */
+                gap: 0.2rem;
+                flex-shrink: 0.6;
             }
             .nav-left button, .nav-right button {
-                font-size: 0.75rem; /* Smaller buttons */
-                padding: 0.3rem 0.5rem; /* Reduced padding */
-            }
-            .search-container input {
-                width: 80px; /* Smallest practical width */
-                font-size: 0.75rem;
-                padding: 0.2rem 0.3rem;
-            }
-            .search-container button {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+                min-width: 50px; /* Touch-friendly size */
             }
             .nav-logo {
-                max-height: 40px; /* Smaller nav logo */
-                margin: 0 0.5rem; /* Add some margin around logo */
+                max-height: 30px;
+                margin: 0 0.2rem;
             }
             .nav-logo-container {
-                 min-width: 60px; /* Smaller min-width for logo container */
-                 flex-grow: 0; /* Limit growth for logo container */
+                min-width: 40px;
+                flex-grow: 0.5;
             }
 
             /* Header Adjustments */
             header {
-                flex-direction: row; /* KEEP AS ROW as requested */
+                flex-direction: row;
                 align-items: center;
-                justify-content: space-around; /* Distribute space */
+                justify-content: space-around;
                 padding: 0.5rem 1rem;
             }
             .header-logo-left, .header-logo-right {
-                max-height: 50px; /* Much smaller header logos */
-                margin: 0 5px; /* Reduced margin */
-                flex-shrink: 1;
+                max-height: 30px;
+                margin: 0 5px;
             }
             .header-text-container {
-                margin: 0 5px; /* Reduced margin */
-                min-width: 80px; /* Allow shrinking */
-                flex-grow: 1; /* Still allow to grow */
+                margin: 0 5px;
+                min-width: 60px;
+                flex-grow: 0.8;
             }
             header h1 {
-                font-size: 1rem; /* Smaller H1 */
-                white-space: normal; /* Allow title to wrap if needed */
+                font-size: 1rem;
+                white-space: normal;
             }
             .group-text {
-                font-size: 0.7rem; /* Smaller group text */
-                white-space: normal; /* Allow text to wrap if needed */
+                font-size: 0.6rem;
+                white-space: normal;
+            }
+
+            /* Hero Section Adjustments */
+            .hero {
+                padding: 2rem 1rem;
+            }
+            .hero h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .hero button {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+
+            /* Product Card Adjustments (3 columns maintained) */
+            .product-grid {
+                gap: 1rem;
+                padding: 0.5rem;
+            }
+            .product-card {
+                width: calc(33.33% - 0.67rem); /* 3 columns, adjusted for smaller gap */
+                min-width: 100px; /* Allow smaller cards for smartphones */
+                padding: 0.5rem;
+                font-size: 0.65rem;
+            }
+            .product-card img {
+                height: 80px;
+            }
+            .product-card h3 {
+                font-size: 0.65rem;
+                margin: 0.3rem 0;
+            }
+            .product-card p {
+                font-size: 0.6rem;
+                margin-bottom: 0.2rem;
+            }
+            .product-card .price, .product-card .rating {
+                font-size: 0.65rem;
+            }
+            .product-card button {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.65rem;
+                min-width: 60px; /* Touch-friendly */
+            }
+
+            /* Footer Adjustments */
+            footer {
+                padding: 0.5rem;
+                font-size: 0.7rem;
+            }
+            footer a {
+                margin: 0 0.3rem;
+            }
+        }
+
+        /* Tablet and Small Laptop Adjustments */
+        @media (min-width: 431px) and (max-width: 768px) {
+            /* Navigation Bar Adjustments */
+            .nav-container {
+                padding: 0.5rem;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+            }
+            .nav-left, .nav-right {
+                gap: 0.3rem;
+                flex-shrink: 0.5;
+            }
+            .nav-left button, .nav-right button {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+                min-width: 60px;
+            }
+            .nav-logo {
+                max-height: 40px;
+                margin: 0 0.3rem;
+            }
+            .nav-logo-container {
+                min-width: 50px;
+                flex-grow: 1;
+            }
+
+            /* Header Adjustments */
+            header {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 0.5rem 1rem;
+            }
+            .header-logo-left, .header-logo-right {
+                max-height: 50px;
+                margin: 0 5px;
+            }
+            .header-text-container {
+                margin: 0 5px;
+                min-width: 80px;
+                flex-grow: 1;
+            }
+            header h1 {
+                font-size: 1.2rem;
+                white-space: normal;
+            }
+            .group-text {
+                font-size: 0.7rem;
+                white-space: normal;
             }
 
             /* Hero Section Adjustments */
@@ -354,28 +455,40 @@
             .hero p {
                 font-size: 1rem;
             }
+            .hero button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
 
-            /* Product Card Adjustments (3 columns still) */
+            /* Product Card Adjustments */
             .product-card {
-                /* Inherits calc(33.33% - 1rem) from global, ensuring 3 columns */
-                min-width: unset; /* Allow it to shrink below 200px if necessary */
-                width: calc(33.33% - 1rem); /* Re-assert for clarity */
-                padding: 0.5rem; /* Reduce padding inside card */
+                width: calc(33.33% - 1rem);
+                min-width: 150px;
+                padding: 0.7rem;
+                font-size: 0.75rem;
             }
             .product-card img {
-                height: 120px; /* Make images smaller to fit 3 columns */
+                height: 120px;
             }
             .product-card h3 {
-                font-size: 0.9rem; /* Smaller title */
+                font-size: 0.8rem;
+                margin: 0.4rem 0;
             }
             .product-card p {
-                font-size: 0.7rem; /* Smaller description */
+                font-size: 0.7rem;
+                margin-bottom: 0.3rem;
             }
             .product-card .price, .product-card .rating {
-                font-size: 0.8rem; /* Smaller price and rating */
+                font-size: 0.8rem;
             }
             .product-card button {
                 padding: 0.4rem 0.6rem;
+                font-size: 0.75rem;
+                min-width: 80px;
+            }
+
+            /* Footer Adjustments */
+            footer {
                 font-size: 0.8rem;
             }
         }
@@ -399,7 +512,6 @@
             </div>
 
             <ul class="nav-right">
-                </li>
                 <li><button onclick="alert('Sign Up clicked')">Sign Up</button></li>
                 <li><button onclick="alert('Login clicked')">Login</button></li>
                 <li><button onclick="alert('Logout clicked')">Logout</button></li>
@@ -432,12 +544,11 @@
     <footer>
         <p>Contact us: info@pharmaretail.com | Phone: +1-800-555-1234</p>
         <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-        <p>&copy; 2025 PharmaRetail. All rights reserved.</p>
+        <p>© 2025 PharmaRetail. All rights reserved.</p>
     </footer>
 
     <script>
-        // Sample product data, currently unused on home.html if product-grid is empty
-        // but kept for completeness if you decide to display products here.
+        // Sample product data
         const products = [
             { id: 1, name: "Paracetamol 500mg", description: "Pain reliever and fever reducer", price: 5.99, image: "imagefolder/PARACETAMOL SYRUP (FOR KIDS).jpg", rating: 4.5 },
             { id: 2, name: "Ibuprofen 200mg", description: "Anti-inflammatory and pain relief", price: 7.49, image: "imagefolder/ACTIFED DRY COUGH & COLD SYRUP.jpg", rating: 4.6 },
@@ -469,10 +580,12 @@
         }
 
         function searchProducts() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchInput = document.getElementById('searchInput');
+            if (!searchInput) return; // Prevent errors if searchInput is not present
+            const searchValue = searchInput.value.toLowerCase();
             const filteredProducts = products.filter(product =>
-                product.name.toLowerCase().includes(searchInput) ||
-                product.description.toLowerCase().includes(searchInput)
+                product.name.toLowerCase().includes(searchValue) ||
+                product.description.toLowerCase().includes(searchValue)
             );
             displayProducts(filteredProducts);
         }
